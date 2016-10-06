@@ -9,7 +9,7 @@
 <script type="text/javascript" rel="javascript" src="[path to sj-parallax.js]"></script>
 <link type="text/css" rel="stylesheet" href="[path to sj-parallax.css]">
 ```
-4. Done!
+Done
 
 ####Using the parallax effect
 There are 2 types of parallax effects so far:
