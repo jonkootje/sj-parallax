@@ -1,0 +1,11 @@
+This css is recommended to link when using the sj-parallax plugin
+
+.sj-parallax {
+    transition: 0ms linear;
+}
+
+.sj-parallax[data-type="fixedheader"] {
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-position-y: 50%;
+}
