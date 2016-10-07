@@ -4,13 +4,7 @@ var parlax = new function() {
     this.elements = [];
 
     this.init = function() {
-
-        for (x=0; x<parlax.elements.length; x++) {
-            var cur = parlax.elements[x];
-            var rect = cur.getBoundingClientRect();
-        }
         parlax.update(); // update once to get inplace
-
         return true;
     }
 
