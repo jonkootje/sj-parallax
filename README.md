@@ -23,6 +23,8 @@ To use the effect on a element, do the following things:
 2. Set data-type (background, normal, fixedheader or fixedbackground)
 3. Set offset (default = 10)
 
+If you're using a background type, you can use data-from to set the background position (top, center, bottom)
+
 ####Examples
 ```
 <div class="sj-parallax" data-type="background" data-offset="50" style="background-image: url('/img/temp.png')"></div>

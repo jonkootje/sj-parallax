@@ -19,6 +19,7 @@ var parlax = new function() {
             var scroll = document.body.scrollTop;
             var cur = parlax.elements[x];
             var rect = cur.getBoundingClientRect();
+            var from = cur.dataset.from || 'center';
 
             if (cur.dataset.type == 'fixedheader') {
                 // fixedheader option
@@ -28,7 +29,18 @@ var parlax = new function() {
                     var relativemax = rect.height / 2 + rect.top
                     var relativecurrent = scroll - rect.top - rect.height / 2;
                     var percentage = relativecurrent / relativemax * 100;
-                    cur.style['background-position-y'] = "calc(50% + " + ((offset)*percentage) + "px)";
+
+                    if (from == 'bottom') {
+                        cur.style['background-position-y'] = "calc(100% + " + ((offset)*percentage) + "px)";
+
+                    }else if (from == 'center') {
+                        cur.style['background-position-y'] = "calc(50% + " + ((offset)*percentage) + "px)";
+
+                    }else if (from == 'top') {
+                        cur.style['background-position-y'] = "calc(0% + " + ((offset)*percentage) + "px)";
+                    }
+
+                    //cur.style['background-position-y'] = "calc(50% + " + ((offset)*percentage) + "px)";
                 }
 
             } else if (cur.dataset.type == 'normal') {
@@ -49,7 +61,16 @@ var parlax = new function() {
                     var relativecurrent = rect.top + rect.height / 2;
                     var percentage = ((relativecurrent / relativemax) - .5) * -2;
                     // cur.style['transform'] = 'translateY(' + percentage * offset + 'px)';
-                    cur.style['background-position-y'] = 'calc(50% + ' + percentage * offset + 'px)';
+
+                    if (from == 'bottom') {
+                        cur.style['background-position-y'] = 'calc(100% + ' + percentage * offset + 'px)';
+                    } else if (from == 'center') {
+                        cur.style['background-position-y'] = 'calc(50% + ' + percentage * offset + 'px)';
+                    } else if (from == 'top') {
+                        cur.style['background-position-y'] = 'calc(0% + ' + percentage * offset + 'px)';
+                    }
+
+                    // cur.style['background-position-y'] = 'calc(50% + ' + percentage * offset + 'px)';
                 }
             } else if (cur.dataset.type == 'fixedbackground') {
                 var dataoffset = parseFloat(cur.dataset.offset) || 10;
@@ -60,7 +81,17 @@ var parlax = new function() {
                     sh = 'scrollHeight';
                 var percentage = h[st]||b[st] / ((h[sh]||b[sh]) - h.clientHeight);
                 console.log(percentage);
-                cur.style['background-position-y'] = 'calc(50% + ' + (percentage - .5) * offset + 'px)';
+                if (from == 'bottom') {
+                    cur.style['background-position-y'] = 'calc(100% + ' + (percentage - .5) * offset + 'px)';
+
+                } else if (from == 'center') {
+                    cur.style['background-position-y'] = 'calc(50% + ' + (percentage - .5) * offset + 'px)';
+
+                } else if (from == 'top') {
+                    cur.style['background-position-y'] = 'calc(0% + ' + (percentage - .5) * offset + 'px)';
+
+                }
+                // cur.style['background-position-y'] = 'calc(50% + ' + (percentage - .5) * offset + 'px)';
             }
         }
         return true;
