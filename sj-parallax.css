@@ -2,8 +2,8 @@
     transition: 0ms linear;
 }
 
-.sj-parallax[data-type="fixedheader"],.sj-parallax[data-type="fixedbackground"] {
-    background-repeat: no-repeat;
+.sj-parallax[data-type="fixedheader"],.sj-parallax[data-type="fixedbackground"],.sj-parallax[data-type="background"] {
+    background-repeat: repeat-y;
     background-position-x: 50%;
     background-position-y: 50%;
 }
