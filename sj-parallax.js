@@ -17,7 +17,7 @@ var parlax = new function() {
 
             if (cur.dataset.type == 'fixedheader') {
                 // fixedheader option
-                if (scroll < rect.height + rect.top && scroll > rect.top) {
+                if (scroll < rect.height + rect.top && scroll >= rect.top) {
                     var dataoffset = parseFloat(cur.dataset.offset) || 10;
                     var offset = parseFloat(dataoffset) / 100;
                     var relativemax = rect.height / 2 + rect.top
