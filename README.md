@@ -1,4 +1,5 @@
 #SJ-PARALLAX
+http://www.parallax.web-sj.com (Demo & Explanation)
 
 ####Install files
 ----------
@@ -15,7 +16,7 @@ Done
 There are 2 types of parallax effects so far:
 1. background (parallax the background-image of a div)
 2. normal (Normal divs / img)
-3. fixedheader (parallax the background-image of a fixed header [shown on http://www.web-sj.com])
+3. fixedheader (parallax the background-image of a fixed header)
 4. fixedbackground (parallax the background-image of a fixed div)
 
 To use the effect on a element, do the following things:
